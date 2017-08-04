@@ -1,23 +1,19 @@
-
 #include <stdio.h>
- 
+#include <math.h>
+
 int main()
 {
-   int first, second, add, subtract, multiply;
-   float divide;
- 
-   printf("Enter two integers\n");
-   scanf("%d%d", &first, &second);
- 
-   add = first + second;
-   subtract = first - second;
-   multiply = first * second;
-   divide = first / (float)second;   //typecasting
- 
-   printf("Sum = %d\n",add);
-   printf("Difference = %d\n",subtract);
-   printf("Multiplication = %d\n",multiply);
-   printf("Division = %.2f\n",divide);
- 
-   return 0;
+	int s;
+	float kw,joules;
+	printf(" enter the joules\n");
+	scanf("%f", &joules);
+	printf("\n enter the time in seconds" );
+	scanf("%d", &s);
+
+	kw = joules / (1000 * s);
+	assert(kw(5,2)==0.0025);
+	printf("\n equivalent kw of entered joule is %f",kw);
+	
+	return 0;
+
 }

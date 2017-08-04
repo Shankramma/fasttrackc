@@ -1,44 +1,47 @@
-#include<stdio.h>
- void printBinary(int );
+#include <stdio.h>
+
  
-void main() 
+
+double sumseries(double);
+
+ 
+
+int main()
+
 {
-   int i, count = 0;
-   unsigned int num;
+
+    double number,sum;
+
+    printf("\n Enter the value:  ");
+
+    scanf("%lf", &number);
+
+    sum = sumseries(number);
+
+    printf("\n Sum of the above series = %lf ", sum);
+
+    return 0;
  
-   printf("\nEnter the number:");
-   scanf("%d", &num);
- 
-   printf("\nDecimal number in binary format :");
-   printBinary(num);
- 
-   while (num != 0)
- {
-      if (num && 1 == 1) 
-      {
-         break;
-      } 
- else {
-         count++;
-         num = num >> 1;
-      }
-   }
-   printf("\nTrailing Zeros : %d", count);
-   
 }
 
-void printBinary(int num)
+ 
+
+double sumseries(double m)
+
 {
-   int mask = 0x4000;
-   if ((num & 0x8000) == 0)
-      printf("0");
-   else
-      printf("1");
-   while (mask != 0) {
-      if ((num & mask) == 0)
-         printf("0");
-      else
-         printf("1");
-      mask = mask >> 1;
-   }
+
+    double sum2 = 0, f = 1, i;
+
+    for (i = 1; i <= m; i++)
+
+    {
+
+        f = f * i;
+
+        sum2 = sum2 +(i / f);
+
+    }
+
+    return(sum2);
+
 }
